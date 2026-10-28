@@ -178,8 +178,8 @@ settings:
 /* ── GLOBAL GEOMETRY, FONTS & ASSETS ────────────────────────────────────── */
 body {
   /* Fonts */
-  --font-text-theme:      'FantasqueSansM Nerd Font Mono', 'Courier New', Courier, monospace;
-  --font-monospace-theme: 'FantasqueSansM Nerd Font Mono', 'Courier New', Courier, monospace;
+  --font-text-theme:      'FantasqueSansM Nerd Font Mono', 'Courier New', courier, monospace;
+  --font-monospace-theme: 'FantasqueSansM Nerd Font Mono', 'Courier New', courier, monospace;
   --font-interface-theme: 'BigBlueTerm437 Nerd Font', 'FantasqueSansM Nerd Font Mono', 'Courier New', monospace;
   --font-heading-theme:   '3270 Nerd Font', '3270 Nerd Font Mono', 'BigBlueTerm437 Nerd Font', monospace;
   --font-text-size:       14px;
@@ -245,21 +245,21 @@ body {
   --rust:  #f28927;
   --green: #39803e;
   --black: #0e0e0e;
-  --gray:  #aaaaaa;
+  --gray:  #aaa;
   --lgray: #d8d8d8;
 
   /* Carbon Base Scale */
   --color-base-00:  #0e0e0e;
-  --color-base-05:  #111111;
+  --color-base-05:  #111;
   --color-base-10:  #141414;
   --color-base-20:  #181818;
   --color-base-25:  #1c1c1c;
   --color-base-30:  #242424;
   --color-base-35:  #2e2e2e;
   --color-base-40:  #383838;
-  --color-base-50:  #555555;
-  --color-base-60:  #777777;
-  --color-base-70:  #aaaaaa;
+  --color-base-50:  #555;
+  --color-base-60:  #777;
+  --color-base-70:  #aaa;
   --color-base-100: #d8d8d8;
 
   /* Semantic Accents */
@@ -269,7 +269,7 @@ body {
   --salamander-secondary:     #39803e;
   --salamander-tertiary:      #d9a74a;
   --salamander-success:       #39803e;
-  --salamander-danger:        #cc4444;
+  --salamander-danger:        #c44;
 
   /* Glow Tokens */
   --salamander-glow:           0 0 10px color-mix(in srgb, var(--color-accent) 30%, transparent);
@@ -305,7 +305,6 @@ body {
   --callout-example:  242, 137, 39;
   --callout-quote:    170, 170, 170;
   --callout-cite:     170, 170, 170;
-
   --salamander-logo-filter: none;
 }
 
@@ -370,7 +369,6 @@ body {
   --callout-example:  200, 96,  16;
   --callout-quote:    84,  74,  59;
   --callout-cite:     84,  74,  59;
-
   --salamander-watermark-opacity: 0.16;
   --salamander-logo-filter: contrast(1.08) saturate(1.1);
 }
@@ -401,7 +399,7 @@ body.preset-amber-crt.theme-dark {
   --callout-note:         255, 176, 0;
   --callout-info:         255, 176, 0;
   --callout-todo:         255, 176, 0;
-  --salamander-logo-filter: drop-shadow(0 0 8px rgba(255, 176, 0, 0.25));
+  --salamander-logo-filter: drop-shadow(0 0 8px rgb(255 176 0 / 25%));
 }
 
 /* Preset 3: Cyberpunk / CRT Phosphor */
@@ -424,12 +422,12 @@ body.preset-cyber-crt.theme-dark {
   --salamander-secondary: #ff2a85;
   --salamander-tertiary:  #ffb000;
   --salamander-success:   #00ff9d;
-  --salamander-danger:    #ff3355;
+  --salamander-danger:    #f35;
   --callout-default:      0, 240, 255;
   --callout-note:         0, 240, 255;
   --callout-info:         0, 240, 255;
   --callout-warning:      255, 176, 0;
-  --salamander-logo-filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.25));
+  --salamander-logo-filter: drop-shadow(0 0 8px rgb(0 240 255 / 25%));
 }
 
 body.preset-cyber-crt.theme-light {
@@ -445,7 +443,7 @@ body.preset-cyber-crt.theme-light {
   --color-base-60:        #384c63;
   --color-base-70:        #1f2f42;
   --color-base-100:       #09101a;
-  --color-accent:         #007799;
+  --color-accent:         #079;
   --color-accent-1:       #005a75;
   --color-accent-2:       #0093bd;
   --salamander-secondary: #c91460;
@@ -467,7 +465,7 @@ body.preset-matrix-green.theme-dark {
   --color-base-60:        #6ea682;
   --color-base-70:        #99cfa9;
   --color-base-100:       #dcffe6;
-  --color-accent:         #00ff88;
+  --color-accent:         #0f8;
   --color-accent-1:       #66ffb8;
   --color-accent-2:       #00cc6d;
   --salamander-secondary: #00d9ff;
@@ -559,6 +557,13 @@ body.preset-matrix-green.theme-dark {
   --checkbox-border-color-hover: var(--color-accent);
   --checkbox-marker-color:       var(--color-base-00);
 
+  /* Blockquotes, Tabs & Caret */
+  --blockquote-border-color:      var(--salamander-secondary);
+  --blockquote-border-thickness:  3px;
+  --blockquote-background-color:  color-mix(in srgb, var(--salamander-secondary) 6%, transparent);
+  --tab-background-active:        var(--background-primary);
+  --caret-color:                  var(--color-accent);
+
   /* Scrollbars */
   --scrollbar-bg:              transparent;
   --scrollbar-thumb-bg:        var(--color-base-30);
@@ -566,10 +571,11 @@ body.preset-matrix-green.theme-dark {
 }
 
 /* Disable glow when toggled in Style Settings */
-body.salamander-no-glow {
-  --salamander-glow: none !important;
-  --salamander-glow-strong: none !important;
-  --salamander-secondary-glow: none !important;
+body.salamander-no-glow.theme-dark,
+body.salamander-no-glow.theme-light {
+  --salamander-glow: none;
+  --salamander-glow-strong: none;
+  --salamander-secondary-glow: none;
 }
 
 /* Optional CRT Scanline Overlay */
@@ -581,9 +587,9 @@ body.salamander-scanlines::before {
   z-index: 9999;
   background: repeating-linear-gradient(
     to bottom,
-    transparent 0px,
+    transparent 0,
     transparent 2px,
-    rgba(0, 0, 0, 0.14) 3px
+    rgb(0 0 0 / 14%) 3px
   );
   opacity: 0.45;
 }
@@ -603,7 +609,7 @@ body.salamander-scanlines::before {
 .cm-header-6 {
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-family: var(--font-heading-theme) !important;
+  font-family: var(--font-heading-theme);
 }
 
 .markdown-rendered h1,
@@ -696,7 +702,6 @@ body:not(.salamander-no-list-chevron) .markdown-rendered ul > li::before {
 .markdown-rendered del,
 .cm-strikethrough {
   color: var(--text-faint);
-  text-decoration-color: var(--salamander-danger);
 }
 
 .markdown-rendered mark,
@@ -705,17 +710,17 @@ body:not(.salamander-no-list-chevron) .markdown-rendered ul > li::before {
   color: var(--color-accent);
   padding: 0.05em 0.25em;
   border-bottom: 1px solid var(--color-accent);
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 /* ── CALLOUTS — CYBERNETIC HUD PANELS ───────────────────────────────────── */
 .callout {
-  border-radius: 0px;
-  border: 1px solid rgba(var(--callout-color), 0.28);
+  border-radius: 0;
+  border: 1px solid rgb(var(--callout-color), 0.28);
   border-left: 3px solid rgb(var(--callout-color));
-  background-color: rgba(var(--callout-color), 0.06);
+  background-color: rgb(var(--callout-color), 0.06);
   padding: 12px 16px;
-  box-shadow: inset 0 1px 0 rgba(var(--callout-color), 0.12);
+  box-shadow: inset 0 1px 0 rgb(var(--callout-color), 0.12);
 }
 
 .callout-title {
@@ -726,7 +731,7 @@ body:not(.salamander-no-list-chevron) .markdown-rendered ul > li::before {
   font-family: var(--font-heading-theme);
   color: rgb(var(--callout-color));
   padding-bottom: 4px;
-  border-bottom: 1px dashed rgba(var(--callout-color), 0.22);
+  border-bottom: 1px dashed rgb(var(--callout-color), 0.22);
   margin-bottom: 6px;
 }
 
@@ -735,14 +740,13 @@ body:not(.salamander-no-list-chevron) .markdown-rendered ul > li::before {
 }
 
 /* ── BLOCKQUOTES — TELEMETRY LOG QUOTES ─────────────────────────────────── */
-.markdown-rendered blockquote,
-.cm-s-obsidian .HyperMD-quote {
+.markdown-rendered blockquote {
   border-left: 3px solid var(--salamander-secondary);
   background: color-mix(in srgb, var(--salamander-secondary) 6%, transparent);
   color: var(--text-muted);
   padding: 0.55em 1.1em;
   margin-left: 0;
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 /* ── LINKS ──────────────────────────────────────────────────────────────── */
@@ -764,10 +768,22 @@ a:hover,
 
 /* ── CODE BLOCKS & INLINE CODE ──────────────────────────────────────────── */
 pre,
-code,
+code {
+  border-radius: 0;
+  border: 1px solid var(--background-modifier-border);
+  background-color: var(--code-background);
+  font-family: var(--font-monospace-theme);
+}
+
+pre code {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
 .markdown-rendered code,
 .markdown-rendered pre {
-  border-radius: 0px;
+  border-radius: 0;
   border: 1px solid var(--background-modifier-border);
   background-color: var(--code-background);
   font-family: var(--font-monospace-theme);
@@ -778,7 +794,6 @@ code,
   padding: 14px 16px;
 }
 
-pre code,
 .markdown-rendered pre code {
   border: none;
   background: transparent;
@@ -812,7 +827,7 @@ pre code,
 /* ── WORKSPACE UI: SIDEBAR, TABS, RIBBON & STATUS BAR ───────────────────── */
 .nav-folder-title,
 .nav-file-title {
-  border-radius: 0px;
+  border-radius: 0;
   font-size: 0.85em;
   border-left: 2px solid transparent;
   transition: background-color 0.1s ease, color 0.1s ease, border-color 0.1s ease;
@@ -834,12 +849,12 @@ pre code,
 
 /* Workspace Tabs */
 .workspace-tab-header {
-  border-radius: 0px !important;
+  border-radius: 0;
 }
 
 .workspace-tab-header.is-active {
   color: var(--color-accent);
-  background: var(--background-primary) !important;
+  background: var(--background-primary);
   border-top: 2px solid var(--color-accent);
   text-shadow: var(--salamander-glow);
 }
@@ -869,7 +884,7 @@ pre code,
   color: var(--text-muted);
   background: var(--background-secondary);
   border-top: 1px solid var(--background-modifier-border);
-  border-radius: 0px;
+  border-radius: 0;
   letter-spacing: 0.04em;
 }
 
@@ -895,7 +910,7 @@ pre code,
 .metadata-property[data-property-key="aliases"] .metadata-property-key,
 .metadata-property[data-property-key="aliases"] .metadata-property-value,
 .metadata-property[data-property-key="aliases"] .multi-select-pill-content {
-  font-family: var(--font-heading-theme) !important;
+  font-family: var(--font-heading-theme);
   letter-spacing: 0.05em;
 }
 
@@ -924,7 +939,7 @@ pre code,
 /* ── TAGS & PILLS ───────────────────────────────────────────────────────── */
 .tag,
 a.tag {
-  border-radius: 0px;
+  border-radius: 0;
   font-size: 0.78em;
   text-transform: lowercase;
   font-family: var(--font-monospace-theme);
@@ -949,7 +964,7 @@ a.tag:hover {
 
 ::-webkit-scrollbar-thumb {
   background: var(--scrollbar-thumb-bg);
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -957,25 +972,23 @@ a.tag:hover {
 }
 
 /* ── CURSOR, ACTIVE LINE & SELECTION ────────────────────────────────────── */
-.cm-cursor,
-.cm-dropCursor {
-  border-left-color: var(--color-accent) !important;
-  border-left-width: 2px !important;
+.cm-s-obsidian .cm-cursor {
+  border-left-color: var(--color-accent);
+  border-left-width: 2px;
 }
 
 ::selection {
   background: var(--text-selection);
 }
 
-.cm-active .cm-line,
-.cm-s-obsidian .cm-activeLine {
-  background: color-mix(in srgb, var(--color-accent) 4%, transparent) !important;
+.cm-s-obsidian .cm-active .cm-line {
+  background: color-mix(in srgb, var(--color-accent) 4%, transparent);
 }
 
 /* ── MODALS, COMMAND PALETTE & OMNISEARCH ───────────────────────────────── */
 .prompt,
 .modal {
-  border-radius: 0px;
+  border-radius: 0;
   border: 1px solid var(--color-accent);
   background: var(--background-primary);
   box-shadow: var(--salamander-glow-strong);
@@ -987,7 +1000,7 @@ a.tag:hover {
 }
 
 .prompt-results .suggestion-item {
-  border-radius: 0px;
+  border-radius: 0;
   border-left: 2px solid transparent;
 }
 
@@ -1004,7 +1017,7 @@ input[type="email"],
 input[type="number"],
 input[type="password"],
 textarea {
-  border-radius: 0px;
+  border-radius: 0;
   border: 1px solid var(--background-modifier-border);
   background: var(--background-secondary);
   color: var(--text-normal);
@@ -1025,7 +1038,7 @@ textarea:focus {
 .tooltip {
   background: var(--background-secondary);
   border: 1px solid var(--color-accent);
-  border-radius: 0px;
+  border-radius: 0;
   color: var(--color-base-100);
   font-size: 0.78em;
   font-family: var(--font-interface-theme);
@@ -1036,7 +1049,7 @@ kbd {
   background: var(--color-base-20);
   border: 1px solid var(--color-base-35);
   border-bottom: 2px solid var(--color-accent);
-  border-radius: 0px;
+  border-radius: 0;
   color: var(--color-base-100);
   font-family: var(--font-monospace-theme);
   font-size: 0.8em;
@@ -1063,7 +1076,7 @@ sup.footnote-ref a {
   border-left: 2px solid var(--color-accent);
   padding: 0.5em 1em;
   background: color-mix(in srgb, var(--color-accent) 3%, transparent);
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 .markdown-embed-title {
@@ -1090,13 +1103,13 @@ sup.footnote-ref a {
 .cm-s-obsidian span.obsidian-search-match-highlight {
   background: color-mix(in srgb, var(--color-accent) 28%, transparent);
   color: var(--color-accent-1);
-  border-radius: 0px;
+  border-radius: 0;
   padding: 0 2px;
 }
 
 /* Calendar Plugin Support */
 #calendar-container .day {
-  border-radius: 0px;
+  border-radius: 0;
   font-family: var(--font-monospace-theme);
 }
 
@@ -1122,9 +1135,9 @@ sup.footnote-ref a {
   filter: var(--salamander-logo-filter);
 }
 
-.workspace-leaf-content[data-type="empty"] *,
 .workspace-empty-state *,
-.mod-empty-view * {
+.mod-empty-view *,
+.workspace-leaf-content[data-type="empty"] * {
   display: none;
 }
 
