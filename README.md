@@ -2,7 +2,7 @@
 
 ![Salamander Theme Preview](screenshot.png)
 
-**Salamander** is a high-contrast, monospace-first terminal theme for [Obsidian](https://obsidian.md) inspired by Appalachian industrial telemetry and classic CRT phosphor displays.
+**Salamander** is a high-contrast, monospace-first terminal theme for [Obsidian](https://obsidian.md) inspired by Appalachia's prolific amphibian.
 
 - **Dark Mode (`.theme-dark`)**: Carbon black (`#0e0e0e`), Appalachian Rust Orange (`#f28927`), Forest Pine Green (`#39803e`), and Warm Ochre (`#d9a74a`).
 - **Light Mode (`.theme-light`)**: Glare-free Creamy White parchment (`#fdfbf6`), Warm Oat-Cream sidebars (`#f3ede1`), Deep Appalachian Rust (`#c86010`), and Forest Pine (`#2b6930`).
