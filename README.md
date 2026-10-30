@@ -23,4 +23,4 @@
 
 ## License
 
-[MIT License](LICENSE) — Created by [Jason](https://holler.works).
+[MIT License](LICENSE) — Created by [Jason](https://messy.quest).
